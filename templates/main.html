@@ -2,8 +2,9 @@
 
 {% block content %}
 
+<img src="{{ url_for('static', filename='img/flight-img.jpg') }}" width="100%" height="100%" style="position: absolute; ">
 <div class="container">
-    <div class="container bg-gray">
+    <div class="container">
         <h1 class="text-center main-head" style="z-index: 1; margin-bottom: 1%;">Check Price</h1>
         
         <div style="margin-left: 5%; margin-right: 5%;">
@@ -13,20 +14,25 @@
                 <div class="row container">
                     <div class="form-group">
                         <label for="from-select" class="select-label">From</label>
-                        <select id="from-select">
+                        <select id="from-select" name="from" required>
                             <option value="" disabled selected>Select Origin</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                            <option value="1">Delhi</option>
+                            <option value="2">Kolkata</option>
+                            <option value="3">Banglore</option>
+                            <option value="4">Mumbai</option>
+                            <option value="5">Chennai</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="to-select" class="select-label">To</label>
-                        <select id="to-select">
+                        <select id="to-select" name="to" required>
                             <option value="" disabled selected>Select Destination</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                            <option value="0">Cochin</option>
+                            <option value="1">Banglore</option>
+                            <option value="2">Delhi</option>
+                            <option value="3">New Delhi</option>
+                            <option value="4">Hyderabad</option>
+                            <option value="5">Kolkata</option>
                         </select>
                     </div>
                 </div>
@@ -35,20 +41,31 @@
                 <div class="row container my-5">
                     <div class="form-group">
                         <label for="from-select" class="select-label">Airline</label>
-                        <select id="from-select">
+                        <select id="from-select" name="Airline" required>
                             <option value="" disabled selected>Select Airline</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                            <option value="0">Jet Airways</option>
+                            <option value="1">IndiGo</option>
+                            <option value="2">Air India</option>
+                            <option value="3">Multiple carriers</option>
+                            <option value="4">SpiceJet</option>
+                            <option value="5">Vistara</option>
+                            <option value="6">Air Asia</option>
+                            <option value="7">GoAir</option>
+                            <option value="8">Multiple carriers Premium economy</option>
+                            <option value="9">Jet Airways Business</option>
+                            <option value="10">Vistara Premium economy/option>
+                            <option value="11">Trujet</option>
                         </select>
                     </div>
                     <div class="form-group my-5">
                         <label for="to-select" class="select-label">Stopage</label>
-                        <select id="to-select">
+                        <select id="to-select" name="stopage" required>
                             <option value="" disabled selected>Select No. of stops</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                            <option value="0">Non stop</option>
+                            <option value="1">1 Stop</option>
+                            <option value="2">2 Stop</option>
+                            <option value="3">3 Stop</option>
+                            <option value="4">4 Stop</option>
                         </select>
                     </div>
                 </div>
@@ -56,21 +73,11 @@
                 <div class="row container my-5">
                     <div class="form-group">
                         <label for="from-select" class="select-label">Departure</label>
-                        <select id="from-select">
-                            <option value="" disabled selected>Select Departure Date</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
-                        </select>
+                        <input type="datetime-local" name="departure" id="departure" required="required">
                     </div>
                     <div class="form-group">
                         <label for="to-select" class="select-label">Arrival</label>
-                        <select id="to-select">
-                            <option value="" disabled selected>Select Arrival Date</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
-                        </select>
+                        <input type="datetime-local" name="arrival" id="arrival" required="required">
                     </div>
                 </div>
 

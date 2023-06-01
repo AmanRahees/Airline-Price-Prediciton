@@ -48,6 +48,22 @@ select {
     border-color: #28b03d;
   }
   
+  input{
+    padding: 10px;
+    padding-right: 5%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 1.3vw;
+    width: 100%;
+  }
+
+  input:focus{
+    outline: none;
+    border-color: #28b03d;
+  }
+
   .form-group {
     margin-right: 10px;
     width: 100%;
