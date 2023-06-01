@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="image-container mb-5">
+    <div class="container">
+        <div class="output ps-a mt-5 ml-5">
+          <h2 class="detail-head">Details</h2>
+            <p class="mt-5"><strong>Airline:</strong> Indigo</p>
+            <p><strong>Origin:</strong> Kochi</p>
+            <p><strong>Destination:</strong> Mumbai</p>
+            <p><strong>No.of stops:</strong> 2</p>
+            <p><strong>Departure Date:</strong> 03-06-2023 23:30</p>
+            <p><strong>Arrival Date:</strong> 04-06-2023 04:30</p>
+        </div>
+      </div>
+      <h1 class="est-price">Estimated Price:</h1>
+      <h1 class="text-primary pred-body"></h1>
+      <a href="{{ url_for('main') }}" class="more-obj button genBtn">Try More →</a>
+    <img width="100%" height="400px" src="{{ url_for('static', filename='img/gradient.jpg') }}">
+</div>
+
+
+<script src="{{ url_for('static', filename='js/anime.js') }}"></script>
+{% endblock %}

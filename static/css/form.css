@@ -1,0 +1,158 @@
+.row {
+    display: flex;
+    align-items: center;
+    margin: 1%;
+  }
+  
+.row input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+  
+select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.select-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.2vw;
+  }
+  
+  .select-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  select {
+    padding: 10px;
+    padding-right: 5%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 1.3vw;
+    width: 100%;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #28b03d;
+  }
+  
+  .form-group {
+    margin-right: 10px;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  form button {
+    --primary-color: #111;
+    --secondary-color: #fff;
+    --hover-color: #28b03d;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    font-size: 1.2vw;
+    z-index: 100;
+  }
+  
+  form button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  form button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  form button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  form button:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+  form button:hover .arrow:before {
+    right: 0;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-head {
+    font-size: 3.5vw;
+    color: #111;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+ .detail-head{
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+ }
+
+ .detail-head::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #28b03d;
+  margin-top: 10px;
+ }
+
+ #main-anime{
+    top: 10%;
+    width: 30%;
+    height: auto;
+    margin-bottom: 20%;
+ }
+
+ .ex-pm{
+    font-size: 4vw;
+    color: aqua;
+    position: absolute;
+    left: 8%;
+    bottom: 55%;
+ }

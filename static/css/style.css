@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #111;
+    font-family: 'Poppins',Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    /* background-color: rgb(220, 228, 225); */
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 70px;
+}
+
+.logo{
+    float: left;
+    margin-top: 50px;
+    margin-right: auto; /* Add this line */
+}
+
+.right ul {
+    display: flex;
+    list-style: none;
+    margin-right: 100px;
+}
+
+.right ul li a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 1s;
+}
+
+.right ul li a:hover {
+    color: rgb(97, 138, 130);
+}
+
+.image-container {
+  position: relative;
+}
+
+.centered-h1 {
+  z-index: 1;
+  font-family: 'Poppins',Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 35%;
+  color: #000;
+  font-size: 4vw;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.left-obj {
+  z-index: 1;
+  position: absolute;
+  top: 65%;
+  left: 25%;
+  transform: translateY(-50%);
+}
+
+.image-container img {
+  display: block;
+  margin-top: 0%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #28b03d;
+    background-color: #fff;
+    border: 2px solid #28b03d;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: color 0.3s ease, background-position 0.3s ease;
+    background-image: linear-gradient(to left, #fff 50%, #28b03d 50%);
+    background-size: 200% 100%;
+    background-position: right;
+}
+
+.button:hover {
+    background-position: left;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(15, 208, 105, 0.3);
+}
+
+.animated-text{
+  z-index: 1;
+  color: #28b03d;
+}
+
+footer {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p{
+  color: #fff;
+}
+
+.est-price{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+
+.pred-body{
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4vw;
+  top: 45%;
+  left: 52%;
+}
+ 
+.more-obj{
+  position: absolute;
+  top: 70%;
+  right: 35%;
+}
+
+#animation-container {
+  position: absolute;
+  z-index: 0;
+  width: 60%;
+  height: 80%; 
+  top: 10%;
+  left: 40%;
+}
+
+.spinner {
+  z-index: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  display: grid;
+  border: 4.5px solid #0000;
+  border-radius: 50%;
+  border-color: #dbdcef #0000;
+  animation: spinner-e04l1k 1s infinite linear;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2.2px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.spinner::before {
+  border-color: #474bff #0000;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+
+.spinner::after {
+  margin: 8.9px;
+}
+
+@keyframes spinner-e04l1k {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.main-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.item-card {
+  flex: 1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(116, 229, 24, 0.637);
+  padding: 10px;
+  margin: 10px;
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 768px) {
+    .list {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(149, 128, 169);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 4rem;
+        left: 100%;
+        transition: all 1s;
+    }
+
+    .left-obj {
+        font-size: 2.5vw; /* Adjust the font size using vw */
+        padding: 1.2vw 2.5vw; /* Adjust the padding for smaller devices */
+      }
+
+    .genBtn {
+        top: 50%;
+    }
+
+    footer p{
+        font-size: 10px;
+    }
+    .est-price{
+      font-size: 20px;
+      top: 20%;
+      left: 50%;
+    }
+    
+    .pred-body{
+      font-size: 30px;
+      top: 30%;
+      left: 60%;
+    }
+
+    .more-obj{
+      top: 60%;
+      right: 65%;
+    }
+
+    #animation-container {
+      width: 80%;
+      height: 90%; 
+      left: 20%;
+      top: 5%;
+    }
+
+    .card {
+      flex-basis: 100%;
+      margin: 10px 6%;
+    }
+}

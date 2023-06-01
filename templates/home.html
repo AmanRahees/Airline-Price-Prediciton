@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValWizard | Predict Your Flight Price</title>
+    
+    <!-- CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/form.css') }}" rel="stylesheet">
+    <!-- END -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js" integrity="sha512-NbKgMv0o4r7P6qWzHvk9L4S7rQzZaccsgD52bffgInf0OCdDg45Ta8uBBKxAbIutsrM5TqB88DYp1EP0NePcdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="body">
+
+<!-- Loader -->
+<div class="spinner"></div>
+
+<!-- NavBar -->
+    <nav class="navbar">
+        <div class="logo">
+            <!-- <a href="{{ url_for('home') }}"> -->
+                <img width="300px" src="{{ url_for('static', filename='img/ValWizard.png') }}">
+            <!-- </a> -->
+        </div>
+        <div class="right">
+            <ul class="list">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">valwizard@info</a></li>
+                <li><a href="#">India</a></li>
+            </ul>
+        </div>
+    </nav>
+<!-- NavBar End -->
+{% block content %}
+    <div class="image-container">
+        <h1 class="centered-h1">Discover Your Perfect<br> <span class="animated-text"></span></h1>
+        <a href="{{ url_for('main') }}" class="left-obj button genBtn">Generate →</a>
+        <div id="animation-container"></div>
+        <img width="100%" height="400px" src="{{ url_for('static', filename='img/gradient.jpg') }}">
+    </div>
+
+    <div class="main-card mx-5">
+        <div class="item-card">
+            <h3 class="text-primary text-center">Why ValWizard?</h3>
+            <p class="text-center text-gray">
+                Because we can help you to save money and find the best time to book flights!
+            </p>
+        </div>
+        <div class="item-card">
+            <h3 class="text-primary text-center">Smart Pricing, Smarter Decisions</h3>
+            <p class="text-center text-gray">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lectus eget elementum consequat.
+            </p>
+        </div>
+        <div class="item-card">
+            <h3 class="text-primary text-center">Explore with Ease</h3>
+            <p class="text-center text-gray">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lectus eget elementum consequat.
+            </p>
+        </div>
+    </div>
+{% endblock %}
+    
+    <footer>
+        <p>Copyright &copy; 2023 All rights reserved by ValWizard</p>
+    </footer>
+    
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <script>
+        var animationPath = "{{ url_for('static', filename='js/anime2.json') }}"
+
+        var animationOptions = {
+        container: document.getElementById('animation-container'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: animationPath
+        };
+
+        var anim = lottie.loadAnimation(animationOptions);
+    </script>
+{% endblock %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      // Hide the spinner once the page has finished loading
+      var spinner = document.querySelector(".spinner");
+      spinner.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

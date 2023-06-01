@@ -1,0 +1,96 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container bg-gray">
+        <h1 class="text-center main-head" style="z-index: 1; margin-bottom: 1%;">Check Price</h1>
+        
+        <div style="margin-left: 5%; margin-right: 5%;">
+            <!-- Form  -->
+            <form method="post" action="{{ url_for('Output_page') }}" style="z-index: 1;">
+
+                <div class="row container">
+                    <div class="form-group">
+                        <label for="from-select" class="select-label">From</label>
+                        <select id="from-select">
+                            <option value="" disabled selected>Select Origin</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to-select" class="select-label">To</label>
+                        <select id="to-select">
+                            <option value="" disabled selected>Select Destination</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+                
+
+                <div class="row container my-5">
+                    <div class="form-group">
+                        <label for="from-select" class="select-label">Airline</label>
+                        <select id="from-select">
+                            <option value="" disabled selected>Select Airline</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-5">
+                        <label for="to-select" class="select-label">Stopage</label>
+                        <select id="to-select">
+                            <option value="" disabled selected>Select No. of stops</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row container my-5">
+                    <div class="form-group">
+                        <label for="from-select" class="select-label">Departure</label>
+                        <select id="from-select">
+                            <option value="" disabled selected>Select Departure Date</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to-select" class="select-label">Arrival</label>
+                        <select id="to-select">
+                            <option value="" disabled selected>Select Arrival Date</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-wrapper my-5">
+                    <button type="submit">
+                        check
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+                        </div>
+                    </button>
+                </div>
+
+            </form>
+            <!-- Form End  -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+
+
+{% endblock %}
