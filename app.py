@@ -58,3 +58,6 @@ def Output_page():
         'price': price
     }
     return render_template('output.html', context=context)
+
+if __name__ == "__main__":
+    app.run()
