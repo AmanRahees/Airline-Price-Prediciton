@@ -6,20 +6,108 @@
     <div class="container">
         <div class="output ps-a mt-5 ml-5">
           <h2 class="detail-head">Details</h2>
-            <p class="mt-5"><strong>Airline:</strong> {{ airline }}</p>
-            <p><strong>Origin:</strong> {{ origin }}</p>
-            <p><strong>Destination:</strong> {{ destination }}</p>
-            <p><strong>No.of stops:</strong> {{ stopage }}</p>
-            <p><strong>Departure Date:</strong> {{ departure }}</p>
-            <p><strong>Arrival Date:</strong> {{ arrival }}</p>
+            <!-- Airline -->
+            <p class="mt-5"><strong>Airline:</strong>
+              {% if airline == '0' %}
+                Air Asia
+              {% elif airline == '1' %}
+                Air India
+              {% elif airline == '2' %}
+                GoAir
+              {% elif airline == '3' %}
+                IndiGo
+              {% elif airline == '4' %}
+                Jet Airways
+              {% elif airline == '5' %}
+                Jet Airways Business
+              {% elif airline == '6' %}
+                Multiple carriers
+              {% elif airline == '7' %}
+                Multiple carriers Premium economy
+              {% elif airline == '8' %}
+                SpiceJet
+              {% elif airline == '9' %}
+                Trujet
+              {% elif airline == '10' %}
+                Vistara
+              {% elif airline == '11' %}
+                Vistara Premium economy
+              {% endif %}
+              </p>
+              <!-- Origin  -->
+            <p><strong>Origin:</strong>
+              {% if origin == '0' %}
+                Banglore
+              {% elif origin == '1' %}
+                Chennai
+              {% elif origin == '2' %}
+                Delhi
+              {% elif origin == '3' %}
+                Kolkata
+              {% elif origin == '4' %}
+                Mumbai
+              {% endif %}
+              </p>
+            <p><strong>Destination:</strong>
+               {% if destination == '0' %}
+                Banglore
+               {% elif destination == '1' %}
+                Cochin
+               {% elif destination == '2' %}
+                Delhi
+               {% elif destination == '3' %}
+                Hyderabad
+               {% elif destination == '4' %}
+                Kolkata
+               {% elif destination == '5' %}
+                New Delhi
+               {% endif %}
+              </p>
+            <p><strong>No.of stops:</strong> 
+              {% if stopage == '0' %}
+                Non-stop
+              {% elif stopage == '1' %}
+                1 stop
+              {% elif stopage == '2' %}
+                2 stop
+              {% elif stopage == '3' %}
+                3 stop
+              {% elif stopage == '4' %}
+                4 stop
+              {% endif %}
+            </p>
+            <p><strong>Departure date :</strong> {{ dept_date }}</p>
+            <p><strong>Departure time :</strong> {{ dept_time }}</p>
+            <p><strong>Arrival date :</strong> {{ arrive_date }}</p>
+            <p><strong>Arrival time :</strong> {{ arrive_time }}</p>
         </div>
       </div>
+      <input id="output" hidden type="text" value="{{ price }}">
       <h1 class="est-price">Estimated Price:</h1>
       <h1 class="text-primary pred-body"></h1>
       <a href="{{ url_for('main') }}" class="more-obj button genBtn">Try More →</a>
     <img width="100%" height="400px" src="{{ url_for('static', filename='img/gradient.jpg') }}">
 </div>
 
+<script>
+  const price=document.getElementById('output').value
 
-<script src="{{ url_for('static', filename='js/anime.js') }}"></script>
+  const newText = "₹"+ price
+
+  const delay = 200; // Delay between each character (in milliseconds)
+
+  const pred = document.querySelector(".pred-body");
+  let index = 0;
+
+  function typeText() {
+    pred.textContent += newText[index];
+    index++;
+    if (index < newText.length) {
+      setTimeout(typeText, delay);
+    }
+  }
+
+  typeText();
+
+</script>
 {% endblock %}

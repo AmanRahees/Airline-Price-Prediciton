@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
+from datetime import datetime
 import pickle
 import numpy as np
 import pandas as pd
@@ -41,23 +42,24 @@ def Output_page():
 
     # concating
     inputs = [ airline, origin, destination, stopage, dept_day, dept_month, arrival_hour, arrival_min, dept_hour, dept_min, dur_hour, dur_min]
-    input_data = np.asarray(inputs)
-    final_input = input_data.reshape(1,-1)
 
     # get price using model
-    prediction = model.predict(final_input)
+    prediction = model.predict([inputs])
     price = round(prediction[0],2)
-
+    dept = datetime.strptime(departure, '%Y-%m-%dT%H:%M')
+    arrive = datetime.strptime(arrival, '%Y-%m-%dT%H:%M')
     context = {
         'airline': airline,
         'origin': origin,
         'destination': destination,
         'stopage': stopage,
-        'dept': departure,
-        'arrival': arrival,
+        'dept_time': dept.strftime('%I:%M %p'),
+        'dept_date': dept.strftime('%Y-%m-%d'),
+        'arrive_time': arrive.strftime('%I:%M %p'),
+        'arrive_date': arrive.strftime('%Y-%m-%d'),
         'price': price
     }
-    return render_template('output.html', context=context)
+    return render_template('output.html', **context)
 
 if __name__ == "__main__":
     app.run()
