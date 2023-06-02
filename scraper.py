@@ -12,7 +12,7 @@ chromedriver_path =  "C:/Users/amanr/Desktop/DS Poject Planning/chromedriver.exe
 origin = input("From?")
 destination = input("To?")
 
-print("\nRoutes:")
+print("\nRoute:")
 print(f"{origin} => {destination}")
 
 
@@ -42,7 +42,6 @@ def get_departure(soup):
         span = time_div.find('span')
         if span:
             time_text = span.text
-            print(time_text)
             departure_list.append(time_text)
     return departure_list
 
@@ -54,14 +53,15 @@ def get_arrival(soup):
             if spans[i].get('class') and 'aOlM' in spans[i]['class']:
                 if i+1 < len(spans):
                     time_text = spans[i+1].text.strip().split('+')[0]
-                    print(time_text)
                     arrival_list.append(time_text)
     return arrival_list
 
 def get_class(soup):
     classes = soup.find_all('div', class_='aC3z-name')
     for i in classes:
-        class_list.append(i.text)
+        print(i.text)
+        if len(airline) > len(class_list):
+            class_list.append(i.text)
     return class_list
 
 def get_total_stops(soup):
@@ -116,6 +116,13 @@ for i in range(num_days+1):
     departure = get_departure(soup)
     arrival = get_arrival(soup)
     classes = get_class(soup)
+    print(len(airlines))
+    print(len(total_stops))
+    print(len(prices))
+    print(len(duration))
+    print(len(departure))
+    print(len(arrival))
+    print(len(classes))
     driver.quit()
     df = pd.DataFrame({
         'Airline': airlines,
